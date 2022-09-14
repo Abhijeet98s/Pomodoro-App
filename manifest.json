@@ -1,12 +1,13 @@
 {
     "name": "Pomodoro Timer",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "manifest_version": 2,
+    "description": "Pomodoro Application - Chrome Extension",
     "browser_action": {
         "default_popup": "index.html",
         "default_icon": "logo.png"
     },
     "icons": {
         "128": "logo.png"
-    }
+    } 
 }

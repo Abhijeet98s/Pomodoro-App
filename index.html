@@ -13,13 +13,17 @@
     <body>
         <div class="container">
             <div class="clock">
-                <div class="timer">25:00</div>
-                <div class="task-name">Task</div>
+                <div class="timer" id="time">
+                    <span id="min">00</span>
+                    <span>:</span>
+                    <span id="sec">00</span>
+                </div>
+                <div id="task" class="task-name">Task</div>
             </div>
             <div class="nav-btn">
-                <button class="reset btn"><i class="fa-solid fa-rotate-right"></i></button>
-                <button class="play btn"><i class="fa-regular fa-circle-play"></i></button>
-                <button class="pause btn"><i class="fa-regular fa-circle-pause"></i></button>
+                <button id="reset" class="btn"><i class="fa-solid fa-rotate-right"></i></button>
+                <button id="play" class="btn"><i class="fa-regular fa-circle-play"></i></button>
+                <button id="pause" class="btn"><i class="fa-regular fa-circle-pause"></i></button>
             </div>
         </div>
         <script src="./app.js"></script>
