@@ -12,17 +12,20 @@
 
     <body>
         <div class="container">
+            <button id="setting" class="setting"><a href="setting.html">Set.</a></button>
             <div class="clock">
                 <div class="timer" id="time">
-                    <span id="min">00</span>
+                    <span id="min">05</span>
                     <span>:</span>
                     <span id="sec">00</span>
                 </div>
-                <div id="task" class="task-name">Task</div>
+                <!-- <div id="info-container"></div> -->
+                <div id="pomo" class="top pomodoro active">Pomodoro</div>
+                <div id="break" class="top break">Break</div>
             </div>
             <div class="nav-btn">
                 <button id="reset" class="btn"><i class="fa-solid fa-rotate-right"></i></button>
-                <button id="play" class="btn"><i class="fa-regular fa-circle-play"></i></button>
+                <button id="start" class="btn"><i class="fa-regular fa-circle-play"></i></button>
                 <button id="pause" class="btn"><i class="fa-regular fa-circle-pause"></i></button>
             </div>
         </div>
