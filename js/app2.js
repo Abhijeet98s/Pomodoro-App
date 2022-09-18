@@ -3,7 +3,7 @@ const inputBreakTime = document.getElementById("inputBreakTime")
 
 const setPomodoro = document.getElementById("setPomodoro")
 const settings = document.getElementById("settings")
-
+const heading = document.getElementById("timer-heading")
 
 let timerArr = [];
 
@@ -23,12 +23,12 @@ setPomodoro.addEventListener("click", () => {
 
     let timer1 = new timer(`${Minutes}`, `${BreakTime}`)
     timerArr.push(timer1)
-    // console.log(timerArr[0])
+    
 
     localStorage.setItem("timerArr", JSON.stringify(timerArr))
 
     console.log(JSON.parse(localStorage.getItem("timerArr"))[0])
 
-    // inputMinutes.style.display = "none"
     settings.style.display = "none"
+    heading.style.display = "none"
 })

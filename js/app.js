@@ -1,12 +1,15 @@
 // fetching data from local storage
-const pomodoroTime = JSON.parse(localStorage.getItem("timerArr"))[0]
 const pomodoroArray = JSON.parse(localStorage.getItem("timerArr"))
-console.log(pomodoroArray.length);
+let pomodoroTime;
+if (pomodoroArray) {
+    pomodoroTime = JSON.parse(localStorage.getItem("timerArr"))[0]
+}
 
 // Timer
 let minHand = document.getElementById("min");
 let secHand = document.getElementById("sec");
 let time = document.getElementById("time")
+let btn = document.getElementById("setting")
 
 // Buttons
 let resetButton = document.getElementById("reset");
@@ -18,10 +21,9 @@ let pomoTimer = document.getElementById("pomo")
 let breakTimer = document.getElementById("break")
 
 // Sounds
-let bell = new Audio("./bell.mp3")
-let click = new Audio("./click.mp3")
+let bell = new Audio("./Sound/bell.mp3")
+let click = new Audio("./Sound/click.mp3")
 
-// let info = document.getElementById("info-container")
 
 
 let startTimer;
@@ -32,18 +34,15 @@ time.addEventListener("load", setValue());
 
 
 function setValue() {
-    minHand.innerText = pomodoroArray ? pomodoroTime.min : "10";
+    minHand.innerText = pomodoroTime == null ? "10" : pomodoroTime.min;
     secHand.innerText = "00";
-    breakTimer.innerText = "";
-    // info.innerHTML = `<div> Pomodoro </div>`
+    pomoTimer.innerText = "Pomodoro"
 }
 
 function startBreak() {
-    minHand.innerText = pomodoroArray.length ? pomodoroTime.brTime : "05";
+    minHand.innerText = pomodoroTime == null ? "05" : pomodoroTime.brTime;
     secHand.innerText = "00";
-    pomoTimer.innerText = "Break";
-    // pomoTimer.style.display = "none"
-    // breakTimer.style.display = "block"
+    pomoTimer.innerText = "Short Break";
 }
 
 
@@ -71,6 +70,7 @@ startButton.addEventListener("click", function () {
 
 
 // Timer countdown
+
 function timer() {
     if (secHand.innerText != 0) {
         secHand.innerText--;
@@ -102,10 +102,9 @@ pauseButton.addEventListener("click", function () {
 
 // Reset the timer
 resetButton.addEventListener("click", function () {
-    minHand.innerText = pomodoroTime.min;
+    minHand.innerText = pomodoroTime == undefined ? "10" : pomodoroTime.min;
     secHand.innerText = "00";
-    pomoTimer.innerText = "";
-    breakTimer.innerText = "Pomodoro"
+    pomoTimer.innerText = "Pomodoro";
     clearInterval(startTimer);
     startTimer = undefined;
 });
